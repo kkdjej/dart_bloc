@@ -44,7 +44,7 @@ class SimpleBlocObserver extends BlocObserver {
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace starckTrace) {
-    print('${bloc.runtimeType} $error $starckTrace');
+    print('$error $starckTrace');
     super.onError(bloc, error, starckTrace);
   }
 }
@@ -58,9 +58,16 @@ class CounterBloc extends Bloc<CounterEvent, int> {
   Stream<int> mapEventToState(CounterEvent event) async* {
     switch (event) {
       case CounterEvent.increment:
+        addError(Exception("increment error!"), StackTrace.current);
         yield state + 1;
         break;
     }
+  }
+
+  @override
+  void onEvent(CounterEvent event) {
+    super.onEvent(event);
+    print(event);
   }
 
   @override
@@ -71,8 +78,8 @@ class CounterBloc extends Bloc<CounterEvent, int> {
 
   @override
   void onTransition(Transition<CounterEvent, int> transition) {
-    super.onTransition(transition);
     print(transition);
+    super.onTransition(transition);
   }
 }
 
