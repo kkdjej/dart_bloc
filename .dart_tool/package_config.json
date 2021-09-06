@@ -3,13 +3,13 @@
   "packages": [
     {
       "name": "bloc",
-      "rootUri": "file:///Users/K/.pub-cache/hosted/pub.dartlang.org/bloc-7.1.0",
+      "rootUri": "file:///Users/kidaekwon/.pub-cache/hosted/pub.dartlang.org/bloc-7.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/K/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
+      "rootUri": "file:///Users/kidaekwon/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -20,7 +20,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-06T00:19:09.472535Z",
+  "generated": "2021-09-06T04:52:24.305183Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }
