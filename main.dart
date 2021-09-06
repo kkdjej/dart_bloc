@@ -99,7 +99,7 @@ void main() async {
   // await Future.delayed(Duration.zero);
   // print(bloc.state);
   // await bloc.close();
-
+  Bloc.observer = MyBlocObserver();
   final subscription = bloc.stream.listen(print);
   bloc.add(CounterEvent.increment);
   await Future.delayed(Duration.zero);
@@ -107,4 +107,22 @@ void main() async {
   await bloc.close();
 }
 
-class MyBlocObserver extends BlocObserver {}
+class MyBlocObserver extends BlocObserver {
+  @override
+  void onChange(BlocBase bloc, Change change) {
+    super.onChange(bloc, change);
+    print("${bloc.runtimeType} $change");
+  }
+
+  @override
+  void onTransition(Bloc bloc, Transition transition) {
+    super.onTransition(bloc, transition);
+    print("${bloc.runtimeType} $transition");
+  }
+
+  @override
+  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+    print("${bloc.runtimeType} $error $stackTrace");
+    super.onError(bloc, error, stackTrace);
+  }
+}
