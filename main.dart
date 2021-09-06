@@ -106,3 +106,5 @@ void main() async {
   await subscription.cancel();
   await bloc.close();
 }
+
+class MyBlocObserver extends BlocObserver {}
